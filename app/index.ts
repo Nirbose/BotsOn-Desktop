@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, protocol } from "electron"
+import { app, BrowserWindow, ipcMain, shell } from "electron"
 import { join } from "path"
 
 import "dotenv/config"
@@ -22,9 +22,12 @@ function main() {
 }
 
 const showModal = () => {
-	console.log("HELLO WORLD");
-	const win = new BrowserWindow({ width: 300, height: 400 });
-	win.loadFile(join(__dirname, "../public/auth.html"));
+	const win = new BrowserWindow({
+		width: 800,
+		height: 650,
+	});
+
+	win.loadURL('https://discord.com/oauth2/authorize?client_id=931298070338109450&redirect_uri=botson%3A%2F%2Fauth%2Fcallback&response_type=code&scope=guilds%20identify')
 };
 
 ipcMain.on("showModal", showModal);
