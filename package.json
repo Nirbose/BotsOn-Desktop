@@ -30,6 +30,7 @@
     "discord-oauth2": "^2.10.0",
     "dotenv": "^16.0.1",
     "electron": "^18.2.4",
+    "electron-forge": "^5.2.4",
     "sirv-cli": "^2.0.0",
     "svelte-spa-router": "^3.2.0"
   }
